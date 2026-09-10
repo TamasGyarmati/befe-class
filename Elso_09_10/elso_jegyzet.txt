@@ -1,0 +1,55 @@
+Frontend: minden ami a kliens oldalon működik (HTML, CSS, JavaScript)
+- Kell valami ami hostolja (szerver) : szerver nélkül nem működik, trükközés nélkül (letöltött weboldal lokálisan)
+
+[FE, kliens] -> HTTP -> <- API / JSON <- [BE, szerver]
+- kérés - válasz alapú, állapotmentes
+
+Mi az a HTTP?
+
+FE -> Internet -> DNS -> Internet -> BE -> Adatbázis
+- DNS: IP <-> DOMAIN
+
+localhost -> build --output--> Fel kell tölteni : FTP / Vercel / GitHub pages
+
+JavaScript nyelvi jellemzői
+- high-level
+	- nincs erőforrás/memória-kezelés
+	- nem CPU közeli nyelv
+	- magasabb absztrakciós szint
+
+- garbage-collected
+	- van egy mechanizmus amely figyeli az erőforrásokat és felszabadítja a nem használt erőforrásokat
+
+- prototype-based
+	- hasonlóan C#-hoz, ahol minden az Objects-ből származik le, itt minden a Prototype-ból (kicsit különlegesebb objektum)
+
+- object-oriented
+
+- multi-paradigm
+	- I. Procedurális, OOP, Funkcionális paradigmákat is támogatja
+		- Funkcionális | pl.: tömb metódusok "[].filter(...).map(...).reduce(...)"
+	
+	- II. Imperatív : hogyan? | Deklaratív : mit szeretnénk?
+		- Deklaratív | pl.: Angular -> ngfor, @for
+
+- interpreted or JIT (Just-in-Time)
+
+- dynamic
+	- nem kell típust meghatározni
+	- let a = 100 -> a = "fa" engedélyezett
+
+- single-threaded
+	- a végrehajtás egyszálon tud működni
+	- aszinkronitás miatt nem pontosan, egy szál
+
+- first-class functions
+	- a függvényeket változókban ellehet tárolni / használni őket
+	- callback függvények (függvény amely egy másik függvényt hív / vesz át?)
+
+- non-blocking event loop concurrency model
+
+var változó
+- Console.WriteLine(a); -> int a = 100 -> hiba
+- console.log(a); -> var a = 10; -> elérhető de undefined -> jelenség neve : hoisting
+	- a var típusú változók a scope legelejére fel 'hoist'-olódnak
+	- var a; -> console.log(a); -> a = 10;
