@@ -89,7 +89,18 @@ JS Engine
 let a = 100 --bemenet--> Parsing --kimenet--> Abstract Syntax Tree (AST) --bemenet--> 
 {{ Compilation --kimenet--> bytecode --bemenet--> Execution (Callstack) --optimalizáció--> Compilation LOOP, folyamatosan optimalizálja }} JIT
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
+Typescript (Superset of JavaScript)
+
+/dist
+/src
+package.json
+package-lock.json
+tsconfig.json
+node_modules
+
+Mikor és hogyan jön létre? Mire való? Mit kell kézileg setupolni legtöbbször? 
 
 
 
