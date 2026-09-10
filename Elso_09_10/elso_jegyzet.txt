@@ -87,10 +87,7 @@ JavaScript Runtime
 JS Engine
 
 let a = 100 --bemenet--> Parsing --kimenet--> Abstract Syntax Tree (AST) --bemenet--> 
-{{ Compilation --optimalizáció, kimenet--> bytecode --bemenet--> Execution (Callstack) }} JIT
-
-
-
+{{ Compilation --kimenet--> bytecode --bemenet--> Execution (Callstack) --optimalizáció--> Compilation LOOP, folyamatosan optimalizálja }} JIT
 
 
 
