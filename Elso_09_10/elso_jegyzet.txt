@@ -51,5 +51,39 @@ JavaScript nyelvi jellemzői
 var változó
 - Console.WriteLine(a); -> int a = 100 -> hiba
 - console.log(a); -> var a = 10; -> elérhető de undefined -> jelenség neve : hoisting
-	- a var típusú változók a scope legelejére fel 'hoist'-olódnak
+	- var típusú változók a scope legelejére fel 'hoist'-olódnak
 	- var a; -> console.log(a); -> a = 10;
+
+- Temporal Dead Zone (TDZ)
+- var -> function vagy block scope
+- let, const -> block scope
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
