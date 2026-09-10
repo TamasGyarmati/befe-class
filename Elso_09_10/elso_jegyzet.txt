@@ -11,6 +11,8 @@ FE -> Internet -> DNS -> Internet -> BE -> Adatbázis
 
 localhost -> build --output--> Fel kell tölteni : FTP / Vercel / GitHub pages
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
 JavaScript nyelvi jellemzői
 - high-level
 	- nincs erőforrás/memória-kezelés
@@ -40,13 +42,15 @@ JavaScript nyelvi jellemzői
 
 - single-threaded
 	- a végrehajtás egyszálon tud működni
-	- aszinkronitás miatt nem pontosan, egy szál
+	- aszinkronitás != párhuzamos programozás
 
 - first-class functions
 	- a függvényeket változókban ellehet tárolni / használni őket
 	- callback függvények (függvény amely egy másik függvényt hív / vesz át?)
 
 - non-blocking event loop concurrency model
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 var változó
 - Console.WriteLine(a); -> int a = 100 -> hiba
@@ -57,6 +61,40 @@ var változó
 - Temporal Dead Zone (TDZ)
 - var -> function vagy block scope
 - let, const -> block scope
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JavaScript Runtime
+- JS Engine -> JS kód végrehajtás (V8 google (node), spidermonkey (firefox)) -> C++-ban írt, implementálja az ECMAScript (JS szabvány) és WebAssembly-t
+	- callstack [utasítások azaz execution context-ek] (VS Code debugging)
+		- LIFO elv
+
+	- heap [objektumok]
+		- primitív típusok -> callstack-en tárolódnak
+		- komplexebb objektumok -> heap-en tárolódnak
+		- Garbage Collector tisztítja
+
+- Web APIs -> nem a JS része, a böngésző biztosítja a nyelv számára
+	- DOM, Fetch API, Timers
+
+- Callback Queue (Microtask queue, Task queue)
+	- FIFO elv
+	- történik egy utasítás -> a callstackbe kerül (pl. Fetch API hívás) -> átkerül a callback queue-ba -> történik egy event loop -> visszakerül a callstack-be
+	- Promise elv
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JS Engine
+
+let a = 100 --bemenet--> Parsing --kimenet--> Abstract Syntax Tree (AST) --bemenet--> 
+{{ Compilation --optimalizáció, kimenet--> bytecode --bemenet--> Execution (Callstack) }} JIT
+
+
+
+
+
+
+
 
 
 
