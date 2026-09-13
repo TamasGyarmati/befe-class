@@ -93,15 +93,42 @@ let a = 100 --bemenet--> Parsing --kimenet--> Abstract Syntax Tree (AST) --bemen
 
 Typescript (Superset of JavaScript)
 
+public/
+    - Olyan statikus fájlok kerülnek, amelyeket nem akarunk a bundleren keresztül feldolgozni
+    - Bundler: a frontend projekt sok különálló fájlját összerakja egy productionre optimalizált csomaggá.
+    - Build után is elérhetőek
+
 /dist
+    - A build eredménye
+    - A dist az, amit például egy webszervernek / CDN-nek kitehetsz
+    - .gitignore
+
 /src
+    - Itt található a forráskód
+    - Components, Pages mappa stb.
+
 package.json
+    - A projekt milyen npm package-ekre támaszkodik
+    - Name, Scripts, Dependencies, devDependencies stb.
+    - Nem szabad a .gitignore-ba tenni, hisz más ez alapján tölti le a függőségeket az npm install segítségével
+
 package-lock.json
+    - Rögzíti, hogy konkrétan milyen verziók és dependency-k kerültek telepítésre
+    - Nem szabad .gitignore-ba tenni
+
 tsconfig.json
+    - TypeScript compiler config-ja
+
 node_modules
+    - Tartalmazza a telepített package-eket
+    - npm install -> package.json alapján letölti a szükséges csomagokat
+    - .gitignore
 
-Mikor és hogyan jön létre? Mire való? Mit kell kézileg setupolni legtöbbször? 
+Mi az a JSX, TSX?
 
+- Lényegében JavaScript amely JS + HTML kódot használ egyszerre
+- Leggyakrabban React applikációkban jelenik meg
+- function App() { return <div><h1>Hello</h1></div>}
 
 
 
