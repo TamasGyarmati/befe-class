@@ -1,0 +1,162 @@
+JS keretrendszerek
+- Angular
+- React (inkább library-nek mondja magát)
+- Vue stb. stb.
+
+Ezek mind SPA (Single Page Application) -> ellentettje: MPA (Multi Page Application)
+- MPA : SSR : Server Side Rendering -> modern keretrendszerek (SPA) is elkezdték már támogatni ezt
+- AJAX : technológiák összessége : Asynchronous Javascript And XML
+- --Data(JSON, XML, Text, ...)--> [Browser : User Interface -> Javascript calls -> AJAX : AJAX Callback -> Dom Updates -> User Interface] --HTTP Requests-->
+- --HTTP Requests--> [Server : Scripts -> Database -> Scripts] --Data(JSON, XML, Text, ...)-->
+
+Böngésző F12 -> Network -> A Fetch hívás alatt ez van : XHR (XMLHttpRequest) hívás
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Angular
+
+- Komponens alapú
+
+Prerequisites
+Node.js - v22.22.3 or newer
+Text editor - We recommend Visual Studio Code
+Terminal - Required for running Angular CLI commands
+Development Tool - To improve your development workflow, we recommend the Angular Language Service
+
+download angular cli : npm install -g @angular/cli
+new project : ng new <project-name> (--standalone=false)
+
+CSS Preprocessorok -> változókba szervezés, behúzások stb.
+- Less, Sass (SCSS, Indented), Stylus, Stylable, Stylis, Clay (Haskell), CSS Crush (PHP)
+
+VS Code Extension: Prettier -> Formatting, Angular Language Service
+
+A böngésző mindig is csak 3 dolgot fog képes lenni feldolgozni -> HTML, CSS, JS
+- A TS vagy JS Frameworkok vagy Pre-processzorok csak segítőeszközök a fejlesztőknek -> az output mindig is ez a hármas lesz
+
+Ami (), {}, {{ }}, minden angular cucc
+
+React -> Virtual DOM
+- Forráskód -> Virtual DOM fa -> Frissül a tényleges DOM -> HTML megjelenítése
+- 1.000.000 DOM művelet -> Ne mindig minden a tényleges DOM-on frissüljön
+- Az utolsó művelet fog számítani úgyis, tehát az összes - 1 a virtuális DOM-on, az utolsó pedig a fizikai DOM-on
+
+Change Detenction
+- Explicit DOM művelet elfedése, csak akkor módosítsuk azt, ha szükséges
+
+Hasonló az ObservableCollection<>-hez
+
+[(ngModel)] -> FormsModule-t az app-module.ts-ben bekell húzni
+
+GitHub más projekt lehúzása -> cli-ben | npm i -> package.json alapján a node_modules-t letölti!
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Angular mappa struktúra
+
+app directory
+- app-module.ts : fontos komponens importok
+- app-routing-module.ts : routing
+
+index.html -> <app-root> : erre van felhúzva az egész 'SPA'
+<base href="/"> -> vigyázni kell vele, néha nem működik emiatt valami???
+
+Nagy méretű (200+MB) az Angular viszont a legvégén a Dist lényegében csak HTML, CSS, JS + Favicon stb. (~KB.)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Angular komponensek
+
+- Navigációs rész (Navbar)
+- Content rész
+- Footer rész
+
+Mindegyik komponens-nek megvan a saját HTML, CSS, TS fájlja
+
+Komponens generálás: ng generate component VAGY ng g c navigation --skip-tests
+
+Érdekesség:
+.hu/#...
+<a href="#id"> -> könyvjelzőként funkcionál, odamegy az adott id-val rendelkező html elemhez
+
+<a routerLink=""> -> href helyett, hasonló mint az e.preventDefault() működés
+-> Nem tölt be többször az oldal navigálásként
+
+ng g class [class_name] --skip-tests -> osztály generálás
+
+app-routing
+
+{ path: "create", component: Create }
+{ path: "edit/:id", component: Edit }
+
+<router-outlet /> -> dinamikusan betölti a megfelelő komponenseket
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
