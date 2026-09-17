@@ -25,6 +25,7 @@ Development Tool - To improve your development workflow, we recommend the Angula
 
 download angular cli : npm install -g @angular/cli
 new project : ng new <project-name> (--standalone=false)
+ng serve : futtatás, ng build : build
 
 CSS Preprocessorok -> változókba szervezés, behúzások stb.
 - Less, Sass (SCSS, Indented), Stylus, Stylable, Stylis, Clay (Haskell), CSS Crush (PHP)
