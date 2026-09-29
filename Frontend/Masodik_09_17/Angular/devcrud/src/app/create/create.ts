@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-create',
-  standalone: false,
-  styleUrl: './create.css',
+  imports: [],
   templateUrl: './create.html',
+  styleUrl: './create.scss',
 })
 export class Create {}
