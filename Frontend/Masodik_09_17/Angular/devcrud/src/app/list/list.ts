@@ -14,20 +14,7 @@ export class List implements OnInit {
 
   ngOnInit(): void {
     const jsonArray: Array<any> = JSON.parse(localStorage.getItem('developersDB') ?? '[]');
-    this.developers.set(
-      jsonArray.map((d) => {
-        let c = new Developer();
-
-        c.id = d.id;
-        c.age = d.age;
-        c.job = d.job;
-        c.name = d.name;
-        c.salary = d.salary;
-
-        return c;
-      }),
-    );
-
+    this.developers.set(Object.values(jsonArray).map((x) => Object.assign(new Developer(), x)));
     console.log(this.developers());
   }
 
