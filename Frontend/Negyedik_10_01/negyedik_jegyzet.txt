@@ -1,9 +1,13 @@
-www.api.siposm.hu
+www.api.siposm.hu -> free api-k
 Angular - singleton elven működik
+ngIf, ngFor, ngClass -> direktívák, deklaratív elven működnek
+Angular Pipes -> '|'
+data-bs-target, data-bs-toggle -> modal-hoz
 
 Absztrakciós szint: gépi kód -> assembly -> c/c++ -> c# -> AI
 
 Gyakorlat: DevCrud bővítése
+
 - Service-ek behozatala
     + Service behozatala publikusan a konstruktoron keresztül (nyilván Xd)
     + Service generálás
@@ -24,5 +28,6 @@ Gyakorlat: DevCrud bővítése
     + Authorizálás frontenden: canActive (bevan-e jelentkezve?) + isLoggedIn (van-e localStorage-ban token?)
     + ngIf-re rárakjuk, hogy eggyes dolgok ne látszódjanak + route-on belül van kezelve, hogy ne legyen elérhető sem 
         + { path: ..., component: ..., canActive: [AuthService] }
+    + HttpClient JWT
+        + this.http.delete(this.apiUrl, { headers: new HttpHeaders(ContentType, Authorization: "Bearer " + localStorage.get("jwt")), body: ... }).subscribe...
 
-ngIf, ngFor, ngClass -> direktívák, deklaratív elven működnek
