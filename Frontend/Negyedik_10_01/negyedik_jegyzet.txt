@@ -1,0 +1,28 @@
+www.api.siposm.hu
+Angular - singleton elven működik
+
+Absztrakciós szint: gépi kód -> assembly -> c/c++ -> c# -> AI
+
+Gyakorlat: DevCrud bővítése
+- Service-ek behozatala
+    + Service behozatala publikusan a konstruktoron keresztül (nyilván Xd)
+    + Service generálás
+        + ng g service [service_name] or [/services/service_name]
+
+
+- API Integration
+    + HttpClient, konstruktor DI
+    + this.http.[get/post/put/delete]<any>("URI", [post esetén entity]).subscribe(x => ...)
+    + .map(x => Object.assign(new Entity(), x))
+
+- Token Based Auth Integration
+    + BE-től vissza jön a Token, és a FE request-et Tokennel együtt adja le, hogy authorizálja magát
+    + Interface generálás
+        + ng g interface [interface_name]
+        + Mikor kell interface (van olyan típus is, hogy "type") vs. class Angularban?
+            + Interface prefferált
+    + Authorizálás frontenden: canActive (bevan-e jelentkezve?) + isLoggedIn (van-e localStorage-ban token?)
+    + ngIf-re rárakjuk, hogy eggyes dolgok ne látszódjanak + route-on belül van kezelve, hogy ne legyen elérhető sem 
+        + { path: ..., component: ..., canActive: [AuthService] }
+
+ngIf, ngFor, ngClass -> direktívák, deklaratív elven működnek
