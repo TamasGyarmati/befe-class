@@ -25,6 +25,8 @@ Gyakorlat: DevCrud bővítése
         + ng g interface [interface_name]
         + Mikor kell interface (van olyan típus is, hogy "type") vs. class Angularban?
             + Interface prefferált
+            + Általában mindig, ha adatokat szeretnénk reprezentálni
+            + Ha van mellé működés is (segéd, leképző függvény) akkor érdemes class
     + Authorizálás frontenden: canActive (bevan-e jelentkezve?) + isLoggedIn (van-e localStorage-ban token?)
     + ngIf-re rárakjuk, hogy eggyes dolgok ne látszódjanak + route-on belül van kezelve, hogy ne legyen elérhető sem 
         + { path: ..., component: ..., canActive: [AuthService] }
