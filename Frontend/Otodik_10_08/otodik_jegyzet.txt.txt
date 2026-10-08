@@ -20,7 +20,36 @@ Observable
 	}
 	- nincs subscribe((x) => {}) rész
 	- maga a .get<T> az egy Observable<T>-t ad vissza
+
 - developers$ = this.service.getDevs(); -> '$' jel a változóba akkor kell, ha Observable-t tárol
+
 - HTML-ben
 	- *ngFor="let dev of developers$ | async"
 	- Mivel most kimaradt a subscribe(), kell valami ami 'triggerel' és ez lesz az async pipe
+
+- Stateful vs. Stateless "applications" -> { service, component } (komplett Statless alkalmazás, nehezen fogható fogalom)
+	- Stateful:
+		- lokális tömb [] <- API
+	
+	- Stateless:
+		- Observable[] + async pipe (nincs külön tömb, adatfolyamként van kezelve)
+		- Nincs korábbi állapot
+		- Állapot nélküli logika <-[Observable]-> Aszinkron adatok
+
+	- Egy komponens nem tud teljesen stateless lenni (pl. input mező adatkötve eltárolva stb.)
+		- Hogy lehet elérni, hogy stateless legyen?
+		- Input / Output
+
+	- BehaviourSubject : Observable-re egy wrapper
+		- next(), value()
+		- Az előző állapotot tárolja saját magában
+		- bs = BehaviourSubject;
+		- x = bs.asObservable;
+
+	- RxJS - Reactive Extensions Library for JavaScript
+		- "Ha van egy esemény arra van egy válasz"
+		- "Ne kérdezd meg mi történt, hanem iratkozz fel és reagálj amikor megváltozik"
+		- obs -> adatfolyam(async)
+		- rxjs -> operátorokat, eszközöket ad amikkel ezeket az async adatfolyamokat tudjuk kezelni
+		- pl. Angularos HttpClient erre az RxJS-re épül
+
