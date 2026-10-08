@@ -1,0 +1,26 @@
+environments
+- generálása: ng g environments
+- DRY (Don't repeat yourself) elv. | magyarul ne legyen behardcodeolva az összes URI
+
+inject()
+- konstruktor helyett
+	+ Leszármazás esetén: A component (ctor(x)) <- B component (ctor(x)) : base(x)
+	+ Az inject ezt az öröklődési láncolatot egyszerűsíti (?)
+- pl. router = inject(Router); | service = inject(DeveloperService)
+
+pipes
+- <td>{{ dev.salary | currency:"HUF":"symbol":"1.0-0":"hu-HU" }}</td>
+- helyettesíti a segédfüggvényekhasználatát
+	- pl. {{ dev.getFormattedSalary() }} nem kell
+
+Observable
+- Használata
+	- getDevs(): Observable<Developer[]> {
+		return this.http.get<Developer[]>(env.devGetUri);
+	}
+	- nincs subscribe((x) => {}) rész
+	- maga a .get<T> az egy Observable<T>-t ad vissza
+- developers$ = this.service.getDevs(); -> '$' jel a változóba akkor kell, ha Observable-t tárol
+- HTML-ben
+	- *ngFor="let dev of developers$ | async"
+	- Mivel most kimaradt a subscribe(), kell valami ami 'triggerel' és ez lesz az async pipe
