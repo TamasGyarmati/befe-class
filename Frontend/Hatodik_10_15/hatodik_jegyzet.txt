@@ -1,3 +1,5 @@
+--- Component I/O
+
 Child Component TS (régi syntax)
 - @Input() item: MyObject = new MyObject();
 - @Output() message: EventEmitter<MyObject> = new EventEmitter();
@@ -7,12 +9,22 @@ Parent Component HTML
 - [item]="item" -> input jelzése []
 - (message)="hello($event)" -> output jelzése ()
 
-Class implements OnChanges
+--- Lifecycles
+- constructor
+- ngOnInit
+
+- ngOnDestroy
+    - Egy @if vagy *ngIf miatt eltűnik a komponens a HTML-ből
+    - A router egy másik oldalra navigál, és az előző komponens példányát megszünteti
+    - A szülőkomponens megszűnik, és vele együtt a gyermekkomponens is megszűnik
+        - pl. Történik egy http hívás rajta subscribe-al, de az ngOnDestroy-ban .unsubscribe van meghívva (ha elnavigál a user nem lesz fölösleges API kiértékelés)
+        - Fontos! Ha async pipe-ot használunk nem kell ezt megvalósítani, mert automatikusan ezt elvégzi
+
 - ngOnChanges
     - Change Detection triggereli
     - Akkor fut le, amikor egy @Input() értéke megváltozik a szülő komponensből érkező frissítés miatt
 
-Shallow Copy
+--- Shallow Copy
 - A { ...original } létrehoz egy új objektumot, de az address objektumot nem másolja le. 
 - Az eredeti és a másolat ugyanarra a belső objektumra hivatkozik
 
@@ -22,6 +34,45 @@ Shallow Copy
     copy.address.city = 'Szeged';
     console.log(original.address.city); // 'Szeged' -> original.address is változik, nem csak a copy.address, hisz ugyanarra a referenciára mutat
 
-Deep Copy
+--- Deep Copy
 - A deep copy az objektum belső, beágyazott objektumairól is külön másolatot készít
 - Modern JavaScriptben erre használhatod a structuredClone() függvényt
+
+--- Interceptor
+
+[[FE] <--> Interceptor] <--> [BE]
+
+- Az interceptor 'ráül' a hálózati kommunikációra
+- A frontend részében helyezkedik el
+- Generálása: ng g interceptor
+- HttpInterceptorFn típusú függvény
+- response: HttpInterceptorFn = (req, next) => {
+    return next(req).pipe()... logic goes here
+}
+
+--- SignalR
+- C# WebSocket megvalósítása a SignalR
+- Frontendben az Observable objektumot átkell alakítani BehaviourSubject-re, felcsatlakozni a SignalR Hub-ra stb.
+
+--- Záróvizsga - BEFE - Frontend tételei
+- 1. JavaScript nyelv sajátosságai
+- 2. JavaScript engine és runtime
+- 3. Frontend fejlesztés haladóbb aspektusai
+    - Milyen kódszervezési módszerek vannak JS-ben? (nem volt még említve)
+        - export, import, <script !fontos! type="module" !fontos! src="valami.js>
+- 4. Angular haladóbb eszközei I.
+- 5. Angular haladóbb eszközei II.
+
+--- ZH
+- Van feltöltve Minta ZH
+- standalone=false
+- node_modules mappa nélkül kell majd bezippelni (nagy fájlméret)
+- schedule
+    - 8:55 érkezés
+    - 9:00 - 9:30 elmélet papíron + beadás
+    - 9:30 - 10:30 A csoport gyakorlat + beadás
+    - 10:30 - 11:30 B csoport gyakorlat + beadás
+
+- Én : B CSOPORT vagyok
+
+--- Content Projection mi???
