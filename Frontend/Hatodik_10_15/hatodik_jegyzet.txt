@@ -1,0 +1,27 @@
+Child Component TS (régi syntax)
+- @Input() item: MyObject = new MyObject();
+- @Output() message: EventEmitter<MyObject> = new EventEmitter();
+- childHello(): void { this.message.emit(this.item) } -> '.emit!
+
+Parent Component HTML
+- [item]="item" -> input jelzése []
+- (message)="hello($event)" -> output jelzése ()
+
+Class implements OnChanges
+- ngOnChanges
+    - Change Detection triggereli
+    - Akkor fut le, amikor egy @Input() értéke megváltozik a szülő komponensből érkező frissítés miatt
+
+Shallow Copy
+- A { ...original } létrehoz egy új objektumot, de az address objektumot nem másolja le. 
+- Az eredeti és a másolat ugyanarra a belső objektumra hivatkozik
+
+    copy.name = 'Péter';
+    console.log(original.name); // 'Anna' -> nem változott meg, hisz külön referencia
+
+    copy.address.city = 'Szeged';
+    console.log(original.address.city); // 'Szeged' -> original.address is változik, nem csak a copy.address, hisz ugyanarra a referenciára mutat
+
+Deep Copy
+- A deep copy az objektum belső, beágyazott objektumairól is külön másolatot készít
+- Modern JavaScriptben erre használhatod a structuredClone() függvényt
