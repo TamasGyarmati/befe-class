@@ -1,3 +1,5 @@
+--- Content Projection mi???
+
 --- Component I/O
 
 Child Component TS (régi syntax)
@@ -63,16 +65,19 @@ Parent Component HTML
 - 4. Angular haladóbb eszközei I.
 - 5. Angular haladóbb eszközei II.
 
---- ZH
+--- ZH (Én B csoport leszek)
 - Van feltöltve Minta ZH
 - standalone=false
 - node_modules mappa nélkül kell majd bezippelni (nagy fájlméret)
+- segítséget nem lehet használni, de ha valamit elfelejtettem (direktíva, import stb.) akkor odalehet hívni
+
+- Angular verzió ZH-n
+    - Angular CLI : 22.1.6
+    - Node.js : 24.19.0
+    - npm : 11.17.0
+
 - schedule
     - 8:55 érkezés
     - 9:00 - 9:30 elmélet papíron + beadás
     - 9:30 - 10:30 A csoport gyakorlat + beadás
-    - 10:30 - 11:30 B csoport gyakorlat + beadás
-
-- Én : B CSOPORT vagyok
-
---- Content Projection mi???
+    - 10:30 - 11:30 B csoport (én) gyakorlat + beadás
